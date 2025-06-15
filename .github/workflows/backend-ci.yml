@@ -35,4 +35,4 @@ jobs:
           java-version: '21'
           cache: 'maven'
       - name: Build and run Unit/Integration Test with maven
-        run: ./mvnw -ntp -B verify
+        run: mvn -ntp -B verify
