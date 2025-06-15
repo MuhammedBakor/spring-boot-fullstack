@@ -1,7 +1,7 @@
 services:
   db:
     container_name: mypostgres
-    image: postgres
+    image: postgres:latest
     environment:
       POSTGRES_USER: moody
       POSTGRES_PASSWORD: password
