@@ -162,6 +162,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Slack Commit message and sha
+        run: >
+          curl -X POST -H "Content-type: application/json"
+          --data '{"text": "github: https://github.com/MuhammedBakor/spring-boot-fullstack/commits/${{github.sha}} - ${{github.event.head.commit.message}}"}'
+          ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Send Slack Message - Triggered
         run: >
