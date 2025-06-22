@@ -4,9 +4,8 @@
 **/.DS_Store
 **/*.iml
 
-archive/**
-**/archive/**
-**/archive
+
+**/archive/
 # JavaScript
 
 # Logs

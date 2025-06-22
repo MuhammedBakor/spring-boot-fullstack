@@ -3,23 +3,18 @@ package com.moba.Customer;
 import com.moba.exception.DuplicateResourceException;
 import com.moba.exception.RequestValidationException;
 import com.moba.exception.ResourceNotFoundException;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class CustomerServiceTest {
@@ -51,8 +46,8 @@ class CustomerServiceTest {
                 id,
                "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -91,7 +86,8 @@ class CustomerServiceTest {
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
                 "man",
                 email,
-                25
+                25,
+                Gender.MALE
         );
         //When
         underTest.addCustomer(request);
@@ -120,7 +116,8 @@ class CustomerServiceTest {
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
                 "man",
                 email,
-                25
+                25,
+                Gender.MALE
         );
         //When
         assertThatThrownBy(()-> underTest.addCustomer(request))
@@ -172,8 +169,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -212,8 +209,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -253,8 +250,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -293,8 +290,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -333,8 +330,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));
@@ -367,8 +364,8 @@ class CustomerServiceTest {
                 id,
                 "MAN",
                 "man@email",
-                20
-        );
+                20,
+                Gender.MALE);
 
         Mockito.when(customerDao.selectCustomerById(id))
                 .thenReturn(Optional.of(customer));

@@ -30,7 +30,9 @@ function App() {
 
     if (customers.length <= 0) {
         return (
-            <Text>No data</Text>
+            <SidebarWithHeader>
+                <Text>No data avalibal</Text>
+            </SidebarWithHeader>
         )
     }
 
@@ -40,7 +42,9 @@ function App() {
                   {
                       customers.map((customer, index) => (
                   <WrapItem key={index} >
-                      <CardWithImage {...customer}/>
+                      <CardWithImage
+                          imageNumber={index}
+                          {...customer}/>
                   </WrapItem>
                   ))
                   }
