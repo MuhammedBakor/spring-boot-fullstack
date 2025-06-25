@@ -4,22 +4,31 @@ import {Spinner, Text, Wrap, WrapItem} from "@chakra-ui/react";
 import {getCustomers} from "./services/client.js";
 import {useEffect, useState} from "react";
 import CardWithImage from "./components/Card.jsx";
+import CreateCustomerDrawer from "./components/CreateCustomerDrawer.jsx";
+import {errorNotification} from "./services/notification.js";
 
 function App() {
 
     const [customers, setCustomers] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
-    useEffect(() => {console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
-
+    const fetchCustomers = () => {
         setLoading(true)
         getCustomers()
             .then( res => {
-               console.log(res)
                 setCustomers(res.data)}
             ).catch(err => {
-            console.log(err) })
+                setError(err.response.data.message)
+            errorNotification(
+                err.code,
+                err.response.data.message
+            )})
             .finally(() => setLoading(false))
+    }
+
+    useEffect(() => {
+        fetchCustomers();
     }, [])
 
     if (loading) {
@@ -28,23 +37,42 @@ function App() {
         )
     }
 
+    if (error) {
+        return (
+            <SidebarWithHeader>
+                <CreateCustomerDrawer
+                    fetchCustomers={fetchCustomers}
+                />
+                <Text mt={5}>Ooops there was an error</Text>
+            </SidebarWithHeader>
+        )
+    }
+
     if (customers.length <= 0) {
         return (
             <SidebarWithHeader>
-                <Text>No data avalibal</Text>
+                <CreateCustomerDrawer
+                fetchCustomers={fetchCustomers}
+                />
+                <Text mt={5}>No data avalibal</Text>
             </SidebarWithHeader>
         )
     }
 
   return (
       <SidebarWithHeader>
+          <CreateCustomerDrawer
+              fetchCustomers={fetchCustomers}
+          />
               <Wrap justify="center" spacing={30}>
                   {
                       customers.map((customer, index) => (
                   <WrapItem key={index} >
                       <CardWithImage
                           imageNumber={index}
-                          {...customer}/>
+                          {...customer}
+                      fetchCustomers={fetchCustomers}
+                      />
                   </WrapItem>
                   ))
                   }

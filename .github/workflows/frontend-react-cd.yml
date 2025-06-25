@@ -1,0 +1,69 @@
+name: CD - Deploy React Frontend to Render
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - frontend/react/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend/react
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Slack commit message and sha
+        run: >
+          curl -X POST -H 'Content-type: application/json'
+          --data '{"text":":github: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }} - ${{ github.event.head_commit.message }}"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Send Slack Message - Deployment started
+        run: >
+          curl -X POST -H 'Content-type: application/json'
+          --data '{"text":"Deployment started :progress_bar: :fingerscrossed:"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Set build number
+        id: build-number
+        run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+
+      - name: Build and Push Docker Image to Docker Hub
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:${{ steps.build-number.outputs.BUILD_NUMBER }} \
+            --build-arg api_base_url=https://customer-management-api-3y8d.onrender.com .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:${{ steps.build-number.outputs.BUILD_NUMBER }}
+
+      - name: Send Slack Message - Image pushed
+        run: >
+          curl -X POST -H 'Content-type: application/json' 
+          --data '{"text":":docker: Image pushed to Docker Hub with tag: ${{ steps.build-number.outputs.BUILD_NUMBER }}"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Trigger Deploy on Render
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+
+      - name: Send Slack Message - Render deploy triggered
+        run: >
+          curl -X POST -H 'Content-type: application/json' 
+          --data '{"text":"Deployment triggered on Render 🚀"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Send Slack Message - Final status
+        if: always()
+        run: >
+          curl -X POST -H 'Content-type: application/json' 
+          --data '{"text":"Job Status: ${{ job.status }}"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
