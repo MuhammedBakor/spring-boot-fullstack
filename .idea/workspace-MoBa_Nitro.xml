@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd9307fa-ecc4-4ed6-9de9-57ef1b75501b" name="Changes" comment="Continues delivery React frontend">
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerJDBCDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerJPADataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerListDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/moba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/moba/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V2__Add_Unique_Contraint_To_Customer_Email.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V3__Add_Gender_Enum_To_Customer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerJPADataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer/CustomerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/moba/Journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/moba/Journey/CustomerIntegrationTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MuhammedBakor&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MuhammedBakor/spring-boot-fullstack.git&quot;,
+    &quot;accountId&quot;: &quot;144b79aa-02d8-48b5-a54e-0144a8ece507&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2yXb9H7pwiqnSXvG1QUUi7yM7Wg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in customer-management-api.executor": "Run",
+    "JUnit.Customer in customer-management-api.executor": "Run",
+    "JUnit.CustomerIntegrationTest.executor": "Run",
+    "JUnit.CustomerServiceTest.addCustomer.executor": "Run",
+    "JUnit.CustomerServiceTest.executor": "Run",
+    "JUnit.com.moba in customer-management-api.executor": "Run",
+    "JUnit.com.moba.Customer in customer-management-api.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.Main.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/mb70n/OneDrive/Documents/projects/spring-boot-fullstack/archive/.github/workflows",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\archive\.github\workflows" />
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\backend\src\main\resources\db\migration" />
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\archive" />
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\frontend\react" />
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\frontend\react\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\frontend\react\src\components" />
+      <recent name="C:\Users\mb70n\OneDrive\Documents\projects\spring-boot-fullstack\frontend\frontend-react\src\components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="All in customer-management-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Customer in customer-management-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/backend/src/test/java/com/moba/Customer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.moba.Journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.moba.Journey" />
+      <option name="MAIN_CLASS_NAME" value="com.moba.Journey.CustomerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.moba.Customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.moba.Customer" />
+      <option name="MAIN_CLASS_NAME" value="com.moba.Customer.CustomerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest.addCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.moba.Customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.moba.Customer" />
+      <option name="MAIN_CLASS_NAME" value="com.moba.Customer.CustomerServiceTest" />
+      <option name="METHOD_NAME" value="addCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="customer-management-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.moba.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Customer in customer-management-api" />
+        <item itemvalue="JUnit.CustomerServiceTest.addCustomer" />
+        <item itemvalue="JUnit.CustomerServiceTest" />
+        <item itemvalue="JUnit.CustomerIntegrationTest" />
+        <item itemvalue="JUnit.All in customer-management-api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd9307fa-ecc4-4ed6-9de9-57ef1b75501b" name="Changes" comment="" />
+      <created>1749983712077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749983712077</updated>
+      <workItem from="1749983713869" duration="1669000" />
+      <workItem from="1749996986350" duration="2697000" />
+      <workItem from="1750018740224" duration="605000" />
+      <workItem from="1750079426534" duration="3480000" />
+      <workItem from="1750274304416" duration="2349000" />
+      <workItem from="1750307332764" duration="10795000" />
+      <workItem from="1750326593618" duration="2202000" />
+      <workItem from="1750362486546" duration="1412000" />
+      <workItem from="1750443125857" duration="12180000" />
+      <workItem from="1750487567544" duration="9121000" />
+      <workItem from="1750516330337" duration="5066000" />
+      <workItem from="1750578132933" duration="5308000" />
+      <workItem from="1750599236921" duration="661000" />
+      <workItem from="1750750911102" duration="7346000" />
+      <workItem from="1750836438870" duration="4204000" />
+      <workItem from="1750868389949" duration="3630000" />
+      <workItem from="1751048626148" duration="4199000" />
+      <workItem from="1751095807728" duration="302000" />
+      <workItem from="1751120529857" duration="1630000" />
+      <workItem from="1751134610500" duration="1108000" />
+      <workItem from="1751190382370" duration="1906000" />
+      <workItem from="1751215153018" duration="1684000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add build workflow and change docker-compose.yml postgres version to latest">
+      <option name="closed" value="true" />
+      <created>1749998290745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749998290745</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add build workflow and change docker-compose.yml postgres version to latest">
+      <option name="closed" value="true" />
+      <created>1749998436034</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749998436034</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixing Build and run Unit/Integration Test with maven">
+      <option name="closed" value="true" />
+      <created>1749999699602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749999699602</updated>
+    </task>
+    <task id="LOCAL-00004" summary="send slack msg with commit message and sha to CD workflow">
+      <option name="closed" value="true" />
+      <created>1750496436285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750496436285</updated>
+    </task>
+    <task id="LOCAL-00005" summary="CORS, Axios, Fetch customers, Card Sidebar &amp; components">
+      <option name="closed" value="true" />
+      <created>1750497031526</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750497031526</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add gender">
+      <option name="closed" value="true" />
+      <created>1750579456581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750579456581</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Continues delivery React frontend">
+      <option name="closed" value="true" />
+      <created>1750870746455</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750870746455</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add build workflow and change docker-compose.yml postgres version to latest" />
+    <MESSAGE value="fixing Build and run Unit/Integration Test with maven" />
+    <MESSAGE value="send slack msg with commit message and sha to CD workflow" />
+    <MESSAGE value="CORS, Axios, Fetch customers, Card Sidebar &amp; components" />
+    <MESSAGE value="Add gender" />
+    <MESSAGE value="Continues delivery React frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continues delivery React frontend" />
+  </component>
+</project>

@@ -1,3 +1,25 @@
+#server:
+#  port: 8080
+#  error:
+#    include-message: always
+#
+#spring:
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL}
+#    username: ${SPRING_DATASOURCE_USERNAME}
+#    password: ${SPRING_DATASOURCE_PASSWORD}
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    show-sql: true
+#  main:
+#    web-application-type: servlet
+
+
 server:
   port: 8080
   error:
@@ -6,8 +28,6 @@ server:
 cors:
   allowed-origins: "*"
   allowed-methods: "*"
-  allowed-headers: "*"
-  exposed-headers: "*"
 
 spring:
   datasource:
