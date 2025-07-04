@@ -18,7 +18,7 @@ services:
     #  docker run --name con-customer-api --rm -p 8080:8080 --network spring-boot-fullstack_postgres muhammedbakur/customer-management-api:latest --spring.datasource.url=jdbc:postgresql://db:5432/customer
   customer-api:
     container_name: con-customer-api
-    image: muhammedbakur/customer-management-api
+    image: muhammedbakur/customer-management-api:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
     ports:
