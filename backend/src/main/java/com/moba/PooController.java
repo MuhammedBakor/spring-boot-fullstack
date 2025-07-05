@@ -11,6 +11,6 @@ public class PooController {
 
     @GetMapping("/poo")
     public PinPong getPinPong() {
-        return new PinPong("Pong %s".formatted(++COUNTER));
+        return new PinPong("Poo %s".formatted(++COUNTER));
     }
 }

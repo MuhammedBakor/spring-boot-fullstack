@@ -17,6 +17,8 @@ com\moba\Customer\CustomerJPADataAccessService.class
 com\moba\PinPongController.class
 com\moba\exception\ResourceNotFoundException.class
 com\moba\jwt\JWTAuthenticationFilter.class
+com\moba\PooController$PinPong.class
+com\moba\PooController.class
 com\moba\Customer\CustomerUpdateRequest.class
 com\moba\PinPongController$PinPong.class
 com\moba\Customer\Customer.class

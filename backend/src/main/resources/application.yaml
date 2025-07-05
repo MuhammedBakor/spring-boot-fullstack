@@ -11,9 +11,9 @@ cors:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/customer
-    username: moody
-    password: password
+    url: ${SPRING_DATASOURCE_URL} #jdbc:postgresql://localhost:5432/customer
+    username: ${SPRING_DATASOURCE_USERNAME} #moody
+    password: ${SPRING_DATASOURCE_PASSWORD} #password
   jpa:
     hibernate:
       ddl-auto: validate

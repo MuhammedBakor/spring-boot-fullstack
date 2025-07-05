@@ -42,6 +42,10 @@ public class SecurityFilterChainConfig {
                         .permitAll()
                         .anyRequest()
                         .authenticated()
+                        .requestMatchers(HttpMethod.GET, "/ping")
+                        .permitAll()
+                        .requestMatchers(HttpMethod.GET, "/poo")
+                        .permitAll()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
