@@ -35,17 +35,10 @@ public class SecurityFilterChainConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                HttpMethod.POST,
-                                "/api/v1/customers",
-                                "api/v1/auth/login")
-                        .permitAll()
-                        .anyRequest()
-                        .authenticated()
-                        .requestMatchers(HttpMethod.GET, "/ping")
-                        .permitAll()
-                        .requestMatchers(HttpMethod.GET, "/poo")
-                        .permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/customers", "/api/v1/auth/login").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/ping").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/poo").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
