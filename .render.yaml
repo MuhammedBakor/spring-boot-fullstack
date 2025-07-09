@@ -14,3 +14,4 @@ services:
         value: customer_db_6805_user
       - key: SPRING_DATASOURCE_PASSWORD
         value: Px96Yw30w6cgQSJXWqk7lhfdFeojw4lv
+
