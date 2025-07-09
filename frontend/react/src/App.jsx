@@ -3,8 +3,8 @@ import SidebarWithHeader from "./components/sharde/sidebar.jsx";
 import {Spinner, Text, Wrap, WrapItem} from "@chakra-ui/react";
 import {getCustomers} from "./services/client.js";
 import {useEffect, useState} from "react";
-import CardWithImage from "./components/Card.jsx";
-import CreateCustomerDrawer from "./components/CreateCustomerDrawer.jsx";
+import CardWithImage from "./components/customer/Card.jsx";
+import CreateCustomerDrawer from "./components/customer/CreateCustomerDrawer.jsx";
 import {errorNotification} from "./services/notification.js";
 
 function App() {
