@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: customer-api
+    env: java
+    buildCommand: ./mvnw package
+    startCommand: java -jar backend/target/customer-management-api-0.0.2-SNAPSHOT.jar
+    rootDir: backend
+    branch: main
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d1j4hnadbo4c73c4kaqg-a.oregon-postgres.render.com:5432/customer_db_6805?sslmode=require
+      - key: SPRING_DATASOURCE_USERNAME
+        value: customer_db_6805_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: Px96Yw30w6cgQSJXWqk7lhfdFeojw4lv
