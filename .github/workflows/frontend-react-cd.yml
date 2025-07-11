@@ -42,14 +42,18 @@ jobs:
 
       - name: Build and Push Docker Image to Docker Hub
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:${{ steps.build-number.outputs.BUILD_NUMBER }} \
+          docker build \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:${{ steps.build-number.outputs.BUILD_NUMBER }} \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:latest \
             --build-arg api_base_url=https://customer-management-api-3y8d.onrender.com .
+
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:${{ steps.build-number.outputs.BUILD_NUMBER }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/customer-management-react:latest
 
       - name: Send Slack Message - Image pushed
         run: >
           curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":":docker: Image pushed to Docker Hub with tag: ${{ steps.build-number.outputs.BUILD_NUMBER }}"}' 
+          --data '{"text":":docker: Image pushed to Docker Hub\n• Tag: `${{ steps.build-number.outputs.BUILD_NUMBER }}`\n• Tag: `latest`"}' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Trigger Deploy on Render
@@ -67,3 +71,4 @@ jobs:
           curl -X POST -H 'Content-type: application/json' 
           --data '{"text":"Job Status: ${{ job.status }}"}' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
+    

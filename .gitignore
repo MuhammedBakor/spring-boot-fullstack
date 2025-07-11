@@ -2,14 +2,13 @@
 logs
 *.log
 
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
-target
-**/target
+target/**
+.gitignore
+/backend/target
+/archive/**
+**/archive/**
+archive
