@@ -108,7 +108,7 @@ const Login = () => {
 
     useEffect(() => {
         if(customer){
-            navigate("/dashboard");
+            navigate("/dashboard/customers");
         }
     })
 
