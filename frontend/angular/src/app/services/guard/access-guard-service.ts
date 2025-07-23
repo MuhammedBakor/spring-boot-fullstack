@@ -1,33 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationResponse } from '../../models/authentication-response';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccessGuardService implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    // تحقق أن الكود يعمل فقط في المتصفح (وليس أثناء SSR)
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+    // تحقق من أن الكود يعمل في المتصفح وليس Node
+    if (isPlatformBrowser(this.platformId)) {
       const storedUser = localStorage.getItem('user');
-
       if (storedUser) {
         const authResponse: AuthenticationResponse = JSON.parse(storedUser);
         const token = authResponse.token;
-
         if (token) {
           const jwtHelper = new JwtHelperService();
           const isTokenNonExpired = !jwtHelper.isTokenExpired(token);
-
           if (isTokenNonExpired) {
             return true;
           }
