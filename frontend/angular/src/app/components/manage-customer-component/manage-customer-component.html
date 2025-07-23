@@ -1,0 +1,79 @@
+<div>
+  <h2>{{ operation === 'create'? 'New Customer' : 'Update Customer' }}</h2>
+  <div class="field">
+    <label for="firstName">Name</label>
+    <input
+      [(ngModel)]="customer.name"
+      id="firstName"
+      pInputText
+      placeholder="Enter First Name"
+      type="text"
+      class="w-full"
+    >
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="customer.email"
+      id="email"
+      pInputText
+      placeholder="Enter Email"
+      type="email"
+      class="w-full"
+    >
+  </div>
+  <div class="field">
+    <label for="age">Age</label>
+    <input
+      [(ngModel)]="customer.age"
+      id="age"
+      pInputText
+      placeholder="Enter Age"
+      type="number"
+      class="w-full"
+    >
+  </div>
+  @if (operation === 'create') {
+    <div class="field">
+      <label for="password">Password</label>
+      <input
+        [(ngModel)]="customer.password"
+        id="password"
+        pInputText
+        placeholder="Enter Password"
+        type="password"
+        class="w-full"
+      >
+    </div>
+  }
+
+  @if (operation === 'create') {
+    <div class="field">
+      <label for="gender">Gender</label>
+      <select
+        [(ngModel)]="customer.gender"
+        id="gender"
+        class="p-dropdown w-full custom-select"
+
+      >
+        <option value="">Select gender</option>
+        <option value="MALE">MALE</option>
+        <option VALUE="FEMALE">FEMALE</option>
+      </select>
+    </div>
+  }
+
+  <button
+    [disabled]="!isCustomerValid"
+    (click)="onSubmit()"
+  pButton
+  label="Submit"
+  class="w-full p-button-secondary"
+  ></button>
+  <button
+    (click)="onCancel()"
+    pButton
+    label="Cancel"
+    class="w-full p-button-outlined p-button-danger mt-2"
+  ></button>
+</div>

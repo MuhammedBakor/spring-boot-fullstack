@@ -79,7 +79,7 @@ const CreateCustomerForm = ({ onSuccess }) => {
                         .then(res => {
                             console.log(res);
                             successNotification(
-                                "Customer saved",
+                                "CustomerComponent saved",
                                 `${customer.name} was successfully saved`
                             )
                             onSuccess(res.headers["authorization"]);

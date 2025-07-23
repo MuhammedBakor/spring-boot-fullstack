@@ -1,0 +1,27 @@
+<div class="flex flex-column align-items-end border-bottom-1 border-gray-200 pt-3 pb-3">
+  <div class="flex flex-row align-content-center">
+    <p-button icon="pi pi-bell" [rounded]="true" severity="secondary" class="mr-3" />
+    <p-avatar
+      image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+    size="normal"
+    shape="circle"
+    class="mr-2"
+    />
+    <div>
+      <p class="text-base mb-0 mt-1 text-gray-700">{{username}}</p>
+      <p class="text-ms mb-1 mt-0 text-gray-500">{{userRole}}</p>
+    </div>
+    <div>
+      <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-angle-down"
+      class="p-button-secondary  p-button-text"
+      (click)="menu.toggle($event)"
+      >
+      </button>
+      <p-menu #menu [popup]="true" [model]="items" />
+    </div>
+  </div>
+</div>

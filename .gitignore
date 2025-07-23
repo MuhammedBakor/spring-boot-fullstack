@@ -12,3 +12,19 @@ target/**
 /archive/**
 **/archive/**
 archive
+
+# angular
+**/.angular/cache
+.sass-cache/
+connect.lock
+coverage
+libpeerconnection.log
+testem.log
+typings
+**/angular/node_modules
+
+# Visual Studio Code
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/*

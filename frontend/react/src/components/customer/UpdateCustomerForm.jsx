@@ -48,7 +48,7 @@ const UpdateCustomerForm = ({ fetchCustomers, initialValues, customerId }) => {
                         .then(res => {
                             console.log(res);
                             successNotification(
-                                "Customer updated",
+                                "CustomerComponent updated",
                                 `${updatedCustomer.name} was successfully updated`
                             )
                             fetchCustomers();

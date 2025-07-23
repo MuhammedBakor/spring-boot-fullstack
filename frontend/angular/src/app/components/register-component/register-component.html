@@ -1,0 +1,102 @@
+<div class="flex" style="height: 100vh">
+  <div class="col-6 m-3 flex flex-column justify-content-center">
+    <div class="m-auto">
+      <div class="text-center">
+        <p-avatar
+          image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+          styleClass="mr-2"
+          size="xlarge"
+          shape="circle"
+        ></p-avatar>
+        <h1>Register new account</h1>
+        @if(errorMsg != ''){
+          <p-message
+            severity="error"
+            icon="pi pi-times-circle"
+            styleClass="mb-2"
+          >
+            {{errorMsg}}
+          </p-message>
+        }
+      </div>
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          [(ngModel)]="customer.name"
+          id="name"
+          pInputText
+          placeholder="Enter your full name"
+          type="text"
+          class="w-full"
+        >
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="customer.email"
+          id="email"
+          pInputText
+          placeholder="Enter Username"
+          type="email"
+          class="w-full"
+        >
+      </div>
+      <div class="field">
+        <label for="age">Age</label>
+        <input
+          [(ngModel)]="customer.age"
+          id="age"
+          pInputText
+          placeholder="Age"
+          type="number"
+          class="w-full"
+        >
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          [(ngModel)]="customer.password"
+          id="password"
+          pInputText
+          placeholder="Enter Password"
+          type="password"
+          class="w-full"
+        >
+      </div>
+      <div class="field">
+        <label for="gender">Gender</label>
+        <select
+          [(ngModel)]="customer.gender"
+          id="gender"
+          class="p-dropdown w-full custom-select"
+
+        >
+          <option value="">Select gender</option>
+          <option value="MALE">MALE</option>
+          <option VALUE="FEMALE">FEMALE</option>
+        </select>
+      </div>
+
+      <button
+        (click)="createAccount()"
+        pButton
+        label="Register"
+        class="w-full p-button-secondary"
+      ></button>
+      <button
+        (click)="login()"
+        pButton
+        label="Have an acoount? login"
+        class="p-button-link text-left pl-0"
+        style="color: blue;"
+      ></button>
+    </div>
+  </div>
+  <div class="col-6 flex flex-column justify-content-center align-items-center right-container">
+    <h1>
+      <a href="#" target="_blank">Enroll Now</a>
+    </h1>
+    <img class="background p-6 pt-0"
+         src="https://user-images.githubusercontent.com/40702606/215539167-d7006790-b880-4929-83fb-c43fa74f429e.png" alt="">
+  </div>
+</div>
