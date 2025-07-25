@@ -11,6 +11,9 @@ cors:
 
 aws:
   region: eu-west-1
+  s3:
+    buckets:
+      customer: put-the-exact-buket-name-in-aws-s3
 
 management:
   endpoints:

@@ -5,6 +5,7 @@ import com.github.javafaker.Name;
 import com.moba.Customer.Customer;
 import com.moba.Customer.CustomerRepository;
 import com.moba.Customer.Gender;
+import com.moba.s3.S3Buckets;
 import com.moba.s3.S3Service;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,20 +29,25 @@ public class Main {
     CommandLineRunner runner(
             CustomerRepository customerRepository,
             PasswordEncoder passwordEncoder,
-            S3Service s3Service) {
+            S3Service s3Service,
+            S3Buckets s3Buckets) {
         return args -> {
 
-            //createRandomCustomer(customerRepository, passwordEncoder);
-            s3Service.putObject(
-                    "put the exact buket name in aws s3",
-                    "foo",
-                    "Helo World".getBytes());
-
-            byte[] obj = s3Service.getObject("put the exact buket name in aws s3",
-                    "foo");
-
-            System.out.println("Good to go" + new String(obj));
+            createRandomCustomer(customerRepository, passwordEncoder);
+            testBucketUploadAndDownload(s3Service, s3Buckets);
         };
+    }
+
+    private static void testBucketUploadAndDownload(S3Service s3Service, S3Buckets s3Buckets) {
+        s3Service.putObject(
+                s3Buckets.getCustomer(),
+                "foo/bar/jamila",
+                "Helo World".getBytes());
+
+        byte[] obj = s3Service.getObject("put the exact buket name in aws s3",
+                "foo");
+
+        System.out.println("Good to go" + new String(obj));
     }
 
     private static void createRandomCustomer(CustomerRepository customerRepository, PasswordEncoder passwordEncoder) {
